@@ -115,6 +115,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Экзамен ооп с++\Console.cpp" />
+    <ClCompile Include="Border.cpp" />
+    <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PlayingField.cpp" />
+    <ClCompile Include="Show.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Экзамен ооп с++\Console.h" />
+    <ClInclude Include="..\..\Экзамен ооп с++\ConsoleColor.h" />
+    <ClInclude Include="..\..\Экзамен ооп с++\ConsoleKey.h" />
+    <ClInclude Include="Border.h" />
+    <ClInclude Include="Cell.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="PlayingField.h" />
+    <ClInclude Include="Show.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
