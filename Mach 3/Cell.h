@@ -5,12 +5,12 @@ class Cell
 public:
 	void SetColor(int colour);
 	int GetColor();
-	void SetBackground(int background);
+	void SetBackground(bool background);
 	int GetBackground();
 	void IsTake(bool isTake);
 	bool GetTake();
 private:
 	int color = 0;
-	int background = 0;
+	bool background = false;
 	bool isTake = false;
 };

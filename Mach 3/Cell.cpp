@@ -10,7 +10,7 @@ int Cell::GetColor()
 	return color;
 }
 
-void Cell::SetBackground(int background)
+void Cell::SetBackground(bool background)
 {
 	this->background = background;
 }
