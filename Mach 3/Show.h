@@ -1,9 +1,11 @@
 #pragma once
 
-#include"Border.h"
+#include"PlayingField.h"
 
 class Show
 {
 public:
-	void ShowGame();
+	void ShowGame(PlayingField& field);
+private:
+	const char cell = 'O';
 };
