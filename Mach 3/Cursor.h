@@ -7,7 +7,13 @@ public:
 	void SetRows(int rows);
 	int GetColumns();
 	void SetColumns(int columns);
+	void AddRows();
+	void AddColumns();
+	void MinusRows();
+	void MinusColumns();
 private:
+	const int maxRows = 7;
+	const int maxColumns = 7;
 	int rows = 0;
 	int columns = 0;
 };
