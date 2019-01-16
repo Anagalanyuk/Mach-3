@@ -7,7 +7,7 @@ public:
 	int GetColor();
 	void SetBackground(bool background);
 	int GetBackground();
-	void IsTake(bool isTake);
+	void SetIsTake(bool isTake);
 	bool GetTake();
 private:
 	int color = 0;

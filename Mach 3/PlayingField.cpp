@@ -46,3 +46,20 @@ void PlayingField::ReloadField()
 {
 
 }
+
+void PlayingField::TakeCell(int rows, int columns)
+{
+	if (field[rows][columns].GetTake())
+	{
+		field[rows][columns].SetIsTake(false);
+	}
+	else
+	{
+		field[rows][columns].SetIsTake(true);
+	}
+}
+
+bool PlayingField::IsTake(int rows, int columns)
+{
+	return field[rows][columns].GetTake();
+}

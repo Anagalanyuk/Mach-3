@@ -13,77 +13,116 @@
 #include"Cursor.h"
 
 
-void Show::ShowGame(PlayingField& field)
+void Show::ShowGame(PlayingField* field)
 {
-	//Cursor cursor;
-	//field.SetCorsor(cursor.GetRows(), cursor.GetColumns(), true);
-
 	Console show;
-	for (int i = 0; i < field.GetRows(); ++i)
+	for (int i = 0; i < field->GetRows(); ++i)
 	{
-		for (int j = 0; j < field.GetColumns(); ++j)
+		for (int j = 0; j < field->GetColumns(); ++j)
 		{
 			show.SetCursorPosition(1 + i, 1 + j);
-			if (field.GetColor(i, j) == 1)
+			if (field->GetColor(i, j) == 1)
 			{
-				if (field.GetIsCursor(i, j))
+				if (field->GetIsCursor(i, j))
 				{
-					show.Write(cell, ConsoleColor::Blue, ConsoleColor::Gray);
+					if (field->IsTake(i, j))
+					{
+						show.Write(cell, ConsoleColor::Blue, ConsoleColor::DarkGray);
+					}
+					else
+					{
+						show.Write(cell, ConsoleColor::Blue, ConsoleColor::Gray);
+					}
 				}
 				else
 				{
 					show.Write(cell, ConsoleColor::Blue);
 				}
 			}
-			else if (field.GetColor(i , j) == 2)
+			else if (field->GetColor(i, j) == 2)
 			{
-				if (field.GetIsCursor(i, j))
+				if (field->GetIsCursor(i, j))
 				{
-					show.Write(cell, ConsoleColor::Green, ConsoleColor::Gray);
+					if (field->IsTake(i, j))
+					{
+						show.Write(cell, ConsoleColor::Green, ConsoleColor::DarkGray);
+					}
+					else
+					{
+						show.Write(cell, ConsoleColor::Green, ConsoleColor::Gray);
+					}
 				}
 				else
 				{
 					show.Write(cell, ConsoleColor::Green);
 				}
 			}
-			else if (field.GetColor(i, j) == 3)
+			else if (field->GetColor(i, j) == 3)
 			{
-				if (field.GetIsCursor(i, j))
+				if (field->GetIsCursor(i, j))
 				{
-					show.Write(cell, ConsoleColor::Red, ConsoleColor::Gray);
+					if (field->IsTake(i, j))
+					{
+						show.Write(cell, ConsoleColor::Red, ConsoleColor::DarkGray);
+					}
+					else
+					{
+						show.Write(cell, ConsoleColor::Red, ConsoleColor::Gray);
+					}
 				}
 				else
 				{
 					show.Write(cell, ConsoleColor::Red);
 				}
 			}
-			else if (field.GetColor(i, j) == 4)
+			else if (field->GetColor(i, j) == 4)
 			{
-				if (field.GetIsCursor(i, j))
+				if (field->GetIsCursor(i, j))
 				{
-					show.Write(cell, ConsoleColor::Magenta, ConsoleColor::Gray);
+					if (field->IsTake(i, j))
+					{
+						show.Write(cell, ConsoleColor::Magenta, ConsoleColor::DarkGray);
+					}
+					else
+					{
+						show.Write(cell, ConsoleColor::Magenta, ConsoleColor::Gray);
+					}
 				}
 				else
 				{
 					show.Write(cell, ConsoleColor::Magenta);
 				}
 			}
-			else if (field.GetColor(i, j) == 5)
+			else if (field->GetColor(i, j) == 5)
 			{
-				if (field.GetIsCursor(i, j))
+				if (field->GetIsCursor(i, j))
 				{
-					show.Write(cell, ConsoleColor::DarkYellow, ConsoleColor::Gray);
+					if (field->IsTake(i, j))
+					{
+						show.Write(cell, ConsoleColor::DarkYellow, ConsoleColor::DarkGray);;
+					}
+					else
+					{
+						show.Write(cell, ConsoleColor::DarkYellow, ConsoleColor::Gray);
+					}
 				}
 				else
 				{
 					show.Write(cell, ConsoleColor::DarkYellow);
 				}
 			}
-			else if (field.GetColor(i, j) == 6)
+			else if (field->GetColor(i, j) == 6)
 			{
-				if (field.GetIsCursor(i, j))
+				if (field->GetIsCursor(i, j))
 				{
-					show.Write(cell, ConsoleColor::White, ConsoleColor::Gray);
+					if (field->IsTake(i, j))
+					{
+						show.Write(cell, ConsoleColor::White, ConsoleColor::DarkGray);
+					}
+					else
+					{
+						show.Write(cell, ConsoleColor::White, ConsoleColor::Gray);
+					}
 				}
 				else
 				{
@@ -92,5 +131,4 @@ void Show::ShowGame(PlayingField& field)
 			}
 		}
 	}
-	_getch();
 }

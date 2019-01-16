@@ -5,7 +5,7 @@
 class Show
 {
 public:
-	void ShowGame(PlayingField& field);
+	void ShowGame(PlayingField* field);
 private:
 	const char cell = 'O';
 };

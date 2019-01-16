@@ -20,7 +20,7 @@ int Cell::GetBackground()
 	return background;
 }
 
-void Cell::IsTake(bool isTake)
+void Cell::SetIsTake(bool isTake)
 {
 	this->isTake = isTake;
 }

@@ -12,6 +12,8 @@ public:
 	int GetColor(int rows, int columns);
 	void SetCorsor(int rows, int columns, bool isCursor);
 	bool GetIsCursor(int rows, int columns);
+	void TakeCell(int rows, int columns);
+	bool IsTake(int rows, int columns);
 private:
 	bool isCursor = false;
 	int const rows = 8;
