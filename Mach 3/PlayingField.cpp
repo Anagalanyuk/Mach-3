@@ -6,8 +6,7 @@
 
 PlayingField::PlayingField()
 {
-
-	srand(time(nullptr));
+	srand(time_t(NULL));
 	for (int i = 0; i < rows; ++i)
 	{
 		for (int j = 0; j < columns; ++j)
@@ -17,14 +16,13 @@ PlayingField::PlayingField()
 	}
 }
 
-int PlayingField::GetRows()
-{
-	return rows;
-}
+int PlayingField::GetRows() { return rows; }
 
-int PlayingField::GetColumns()
+int PlayingField::GetColumns() { return columns; }
+
+void PlayingField::SetColor(int rows, int columns, int color)
 {
-	return columns;
+	field[rows][columns].SetColor(color);
 }
 
 int PlayingField::GetColor(int rows, int columns)
@@ -42,9 +40,15 @@ bool PlayingField::GetIsCursor(int rows, int columns)
 	return field[rows][columns].GetBackground();
 }
 
-void PlayingField::ReloadField()
+void PlayingField::ReStart()
 {
-
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j < columns; ++j)
+		{
+			field[i][j].SetColor(rand() % 6 + 1);
+		}
+	}
 }
 
 void PlayingField::TakeCell(int rows, int columns)

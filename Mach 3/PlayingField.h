@@ -6,9 +6,10 @@ class PlayingField
 {
 public:
 	PlayingField();
-	void ReloadField();
+	void ReStart();
 	int GetRows();
 	int GetColumns();
+	void SetColor(int rows, int columns, int color);
 	int GetColor(int rows, int columns);
 	void SetCorsor(int rows, int columns, bool isCursor);
 	bool GetIsCursor(int rows, int columns);

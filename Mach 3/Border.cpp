@@ -8,20 +8,11 @@
 
 #include"ConsoleColor.h"
 
-char Border::GetBorder()
-{
-	return border;
-}
+char Border::GetBorder() { return border; }
 
-int Border::GetX()
-{
-	return x;
-}
+int Border::GetX() { return x; }
 
-int Border::GetY()
-{
-	return y;
-}
+int Border::GetY() { return y; }
 
 void Border::Show()
 {
@@ -42,6 +33,7 @@ void Border::Show()
 		borderShow.SetCursorPosition(x - 1, i + 1);
 		borderShow.Write(border, ConsoleColor::Yellow);
 	}
+
 	borderShow.SetCursorPosition(y + 3, 1);
 	borderShow.Write("Level: 1", ConsoleColor::Cyan);
 	borderShow.SetCursorPosition(y + 3, 3);

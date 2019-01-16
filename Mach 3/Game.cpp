@@ -50,6 +50,10 @@ void Game::Play()
 		{
 			step.Take();
 		}
+		else if (key == static_cast<int>(ConsoleKey::Enter))
+		{
+			field->ReStart();
+		}
 	}
 
 	delete field;

@@ -1,31 +1,13 @@
 #include"Cell.h"
 
-void Cell::SetColor(int color)
-{
-	this->color = color;
-}
+void Cell::SetColor(int color) { this->color = color; }
 
-int Cell::GetColor()
-{
-	return color;
-}
+int Cell::GetColor() { return color; }
 
-void Cell::SetBackground(bool background)
-{
-	this->background = background;
-}
+void Cell::SetBackground(bool background) { this->background = background; }
 
-int Cell::GetBackground()
-{
-	return background;
-}
+int Cell::GetBackground() { return background; }
 
-void Cell::SetIsTake(bool isTake)
-{
-	this->isTake = isTake;
-}
+void Cell::SetIsTake(bool isTake) { this->isTake = isTake; }
 
-bool  Cell::GetTake()
-{
-	return isTake;
-}
+bool  Cell::GetTake() { return isTake; }

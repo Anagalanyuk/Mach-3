@@ -12,9 +12,23 @@ ControlKey::ControlKey(PlayingField* field, Cursor* cursor)
 
 void ControlKey::StepLeft()
 {
-	field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), false);
-	cursor->MinusRows();
-	field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), true);
+	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) && cursor->GetRows() > 0)
+	{
+		int color = field->GetColor(cursor->GetRows() - 1, cursor->GetColumns());
+		field->SetColor(cursor->GetRows() - 1, cursor->GetColumns(),
+			field->GetColor(cursor->GetRows(), cursor->GetColumns()));
+		field->SetColor(cursor->GetRows(), cursor->GetColumns(), color);
+		field->TakeCell(cursor->GetRows(), cursor->GetColumns());
+		field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), false);
+		cursor->MinusRows();
+		field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), true);
+	}
+	else
+	{
+		field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), false);
+		cursor->MinusRows();
+		field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), true);
+	}
 }
 
 void ControlKey::StepRight()
