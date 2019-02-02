@@ -129,6 +129,10 @@ void Show::ShowGame(PlayingField* field)
 					show.Write(cell, ConsoleColor::White);
 				}
 			}
+			else if (field->GetColor(i, j) == 0)
+			{
+			show.Write(' ');
+			}
 		}
 	}
 }

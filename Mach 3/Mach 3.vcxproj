@@ -122,6 +122,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ControlKey.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="PlayingField.cpp" />
     <ClCompile Include="Show.cpp" />
   </ItemGroup>
@@ -134,6 +135,7 @@
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ControlKey.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="PlayingField.h" />
     <ClInclude Include="Show.h" />
   </ItemGroup>
