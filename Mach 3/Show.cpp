@@ -15,28 +15,27 @@
 
 void Show::ShowGame(PlayingField* field)
 {
-	Console show;
 	for (int i = 0; i < field->GetRows(); ++i)
 	{
 		for (int j = 0; j < field->GetColumns(); ++j)
 		{
-			show.SetCursorPosition(x + i, y + j);
+			Console::SetCursorPosition(x + i, y + j);
 			if (field->GetColor(i, j) == 1)
 			{
 				if (field->GetIsCursor(i, j))
 				{
 					if (field->IsTake(i, j))
 					{
-						show.Write(cell, ConsoleColor::Blue, ConsoleColor::DarkGray);
+						Console::Write(cell, ConsoleColor::Blue, ConsoleColor::DarkGray);
 					}
 					else
 					{
-						show.Write(cell, ConsoleColor::Blue, ConsoleColor::Gray);
+						Console::Write(cell, ConsoleColor::Blue, ConsoleColor::Gray);
 					}
 				}
 				else
 				{
-					show.Write(cell, ConsoleColor::Blue);
+					Console::Write(cell, ConsoleColor::Blue);
 				}
 			}
 			else if (field->GetColor(i, j) == 2)
@@ -45,16 +44,16 @@ void Show::ShowGame(PlayingField* field)
 				{
 					if (field->IsTake(i, j))
 					{
-						show.Write(cell, ConsoleColor::Green, ConsoleColor::DarkGray);
+						Console::Write(cell, ConsoleColor::Green, ConsoleColor::DarkGray);
 					}
 					else
 					{
-						show.Write(cell, ConsoleColor::Green, ConsoleColor::Gray);
+						Console::Write(cell, ConsoleColor::Green, ConsoleColor::Gray);
 					}
 				}
 				else
 				{
-					show.Write(cell, ConsoleColor::Green);
+					Console::Write(cell, ConsoleColor::Green);
 				}
 			}
 			else if (field->GetColor(i, j) == 3)
@@ -63,16 +62,16 @@ void Show::ShowGame(PlayingField* field)
 				{
 					if (field->IsTake(i, j))
 					{
-						show.Write(cell, ConsoleColor::Red, ConsoleColor::DarkGray);
+						Console::Write(cell, ConsoleColor::Red, ConsoleColor::DarkGray);
 					}
 					else
 					{
-						show.Write(cell, ConsoleColor::Red, ConsoleColor::Gray);
+					Console::Write(cell, ConsoleColor::Red, ConsoleColor::Gray);
 					}
 				}
 				else
 				{
-					show.Write(cell, ConsoleColor::Red);
+					Console::Write(cell, ConsoleColor::Red);
 				}
 			}
 			else if (field->GetColor(i, j) == 4)
@@ -81,16 +80,16 @@ void Show::ShowGame(PlayingField* field)
 				{
 					if (field->IsTake(i, j))
 					{
-						show.Write(cell, ConsoleColor::Magenta, ConsoleColor::DarkGray);
+						Console::Write(cell, ConsoleColor::Magenta, ConsoleColor::DarkGray);
 					}
 					else
 					{
-						show.Write(cell, ConsoleColor::Magenta, ConsoleColor::Gray);
+						Console::Write(cell, ConsoleColor::Magenta, ConsoleColor::Gray);
 					}
 				}
 				else
 				{
-					show.Write(cell, ConsoleColor::Magenta);
+					Console::Write(cell, ConsoleColor::Magenta);
 				}
 			}
 			else if (field->GetColor(i, j) == 5)
@@ -99,16 +98,16 @@ void Show::ShowGame(PlayingField* field)
 				{
 					if (field->IsTake(i, j))
 					{
-						show.Write(cell, ConsoleColor::DarkYellow, ConsoleColor::DarkGray);;
+						Console::Write(cell, ConsoleColor::DarkYellow, ConsoleColor::DarkGray);;
 					}
 					else
 					{
-						show.Write(cell, ConsoleColor::DarkYellow, ConsoleColor::Gray);
+						Console::Write(cell, ConsoleColor::DarkYellow, ConsoleColor::Gray);
 					}
 				}
 				else
 				{
-					show.Write(cell, ConsoleColor::DarkYellow);
+					Console::Write(cell, ConsoleColor::DarkYellow);
 				}
 			}
 			else if (field->GetColor(i, j) == 6)
@@ -117,21 +116,21 @@ void Show::ShowGame(PlayingField* field)
 				{
 					if (field->IsTake(i, j))
 					{
-						show.Write(cell, ConsoleColor::White, ConsoleColor::DarkGray);
+						Console::Write(cell, ConsoleColor::White, ConsoleColor::DarkGray);
 					}
 					else
 					{
-						show.Write(cell, ConsoleColor::White, ConsoleColor::Gray);
+						Console::Write(cell, ConsoleColor::White, ConsoleColor::Gray);
 					}
 				}
 				else
 				{
-					show.Write(cell, ConsoleColor::White);
+					Console::Write(cell, ConsoleColor::White);
 				}
 			}
 			else if (field->GetColor(i, j) == 0)
 			{
-				show.Write(' ');
+				Console::Write(' ');
 			}
 		}
 	}
@@ -139,8 +138,8 @@ void Show::ShowGame(PlayingField* field)
 	char levelcharacter[10];
 	sprintf_s(scorecharacter, "%d", field->GetScore());
 	sprintf_s(levelcharacter, "%d", field->GetLevel());
-	show.SetCursorPosition(scoreX, scoreY);
-	show.Write(scorecharacter, ConsoleColor::Cyan);
-	show.SetCursorPosition(levelX, levelY);
-	show.Write(levelcharacter, ConsoleColor::Cyan);
+	Console::SetCursorPosition(scoreX, scoreY);
+	Console::Write(scorecharacter, ConsoleColor::Cyan);
+	Console::SetCursorPosition(levelX, levelY);
+	Console::Write(levelcharacter, ConsoleColor::Cyan);
 }

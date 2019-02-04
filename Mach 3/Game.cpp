@@ -29,7 +29,7 @@ void Game::Play()
 	int key = 0;
 	Menu menu;
 	Information info;
-	while ( key != 101)
+	while (key != 101)
 	{
 		if (key == 115)
 		{
@@ -37,14 +37,17 @@ void Game::Play()
 		}
 		menu.MenuShow();
 		key = _getch();
-		while (key == 105 && key != 114)
+		if (key == 105)
 		{
-			system("CLS");
-			info.InformationShow();
-			key = _getch();
-			if (key == 114)
+			while (key != 114)
 			{
 				system("CLS");
+				info.InformationShow();
+				key = _getch();
+				if (key == 114)
+				{
+					system("CLS");
+				}
 			}
 		}
 	}
