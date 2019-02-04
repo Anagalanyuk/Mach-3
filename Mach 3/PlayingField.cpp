@@ -20,6 +20,14 @@ int PlayingField::GetRows() { return rows; }
 
 int PlayingField::GetColumns() { return columns; }
 
+int PlayingField::GetScore() { return score; }
+
+int PlayingField::GetLevel() { return level; }
+
+void PlayingField::AddScore(int addScore) { score += addScore; }
+
+void PlayingField::AddLevel() { level += 1; }
+
 void PlayingField::SetColor(int rows, int columns, int color)
 {
 	field[rows][columns].SetColor(color);

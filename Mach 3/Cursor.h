@@ -6,6 +6,10 @@ public:
 	int GetRows();
 	void SetRows(int rows);
 	int GetColumns();
+	int GetMaxRows();
+	int GetMincolumns();
+	int GetMinRows();
+	int GetMaxColumns();
 	void SetColumns(int columns);
 	void AddRows();
 	void AddColumns();

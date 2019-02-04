@@ -20,7 +20,7 @@ void Show::ShowGame(PlayingField* field)
 	{
 		for (int j = 0; j < field->GetColumns(); ++j)
 		{
-			show.SetCursorPosition(1 + i, 1 + j);
+			show.SetCursorPosition(x + i, y + j);
 			if (field->GetColor(i, j) == 1)
 			{
 				if (field->GetIsCursor(i, j))
@@ -131,8 +131,16 @@ void Show::ShowGame(PlayingField* field)
 			}
 			else if (field->GetColor(i, j) == 0)
 			{
-			show.Write(' ');
+				show.Write(' ');
 			}
 		}
 	}
+	char scorecharacter[10];
+	char levelcharacter[10];
+	sprintf_s(scorecharacter, "%d", field->GetScore());
+	sprintf_s(levelcharacter, "%d", field->GetLevel());
+	show.SetCursorPosition(scoreX, scoreY);
+	show.Write(scorecharacter, ConsoleColor::Cyan);
+	show.SetCursorPosition(levelX, levelY);
+	show.Write(levelcharacter, ConsoleColor::Cyan);
 }

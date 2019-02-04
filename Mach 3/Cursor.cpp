@@ -8,6 +8,14 @@ int Cursor::GetColumns() { return columns; }
 
 void Cursor::SetColumns(int columns) { this->columns = columns; }
 
+int Cursor::GetMinRows() { return 0; }
+
+int Cursor::GetMincolumns() { return 0; }
+
+int Cursor::GetMaxRows() { return maxRows; }
+
+int Cursor::GetMaxColumns() { return maxColumns; }
+
 void Cursor::AddRows()
 {
 	if (rows < maxRows)

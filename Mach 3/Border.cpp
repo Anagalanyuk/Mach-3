@@ -20,24 +20,23 @@ void Border::Show()
 	borderShow.HideCursor();
 	for (int i = 0; i < x; ++i)
 	{
-		borderShow.SetCursorPosition(0 + i, 0);
+		borderShow.SetCursorPosition(i, 0);
 		borderShow.Write(border, ConsoleColor::Yellow);
-		borderShow.SetCursorPosition(0 + i, y + 1);
+		borderShow.SetCursorPosition(i, y + offestY);
 		borderShow.Write(border, ConsoleColor::Yellow);
 	}
 
 	for (int i = 0; i < y; ++i)
 	{
-		borderShow.SetCursorPosition(0, 1 + i);
+		borderShow.SetCursorPosition(0, offestY + i);
 		borderShow.Write(border, ConsoleColor::Yellow);
-		borderShow.SetCursorPosition(x - 1, i + 1);
+		borderShow.SetCursorPosition(x - offsetX, i + offestY);
 		borderShow.Write(border, ConsoleColor::Yellow);
 	}
 
-	borderShow.SetCursorPosition(y + 3, 1);
-	borderShow.Write("Level: 1", ConsoleColor::Cyan);
-	borderShow.SetCursorPosition(y + 3, 3);
-	borderShow.Write("Score: 100", ConsoleColor::Cyan);
-	borderShow.SetCursorPosition(0, y + 1);
+	borderShow.SetCursorPosition(levelX, levelY);
+	borderShow.Write("Level: ", ConsoleColor::Cyan);
+	borderShow.SetCursorPosition(scoreX, scoreY);
+	borderShow.Write("Score: ", ConsoleColor::Cyan);
 	std::cout << std::endl;
 }

@@ -37,54 +37,63 @@ void Game::Play()
 		key = _getch();
 		if (key == static_cast<int>(ConsoleKey::RightArrow))
 		{
-			step.StepRight();
-			game.ShowGame(field);
-			if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-				!move.IsMove(field, cursor))
+			if (cursor->GetRows() < cursor->GetMaxRows())
 			{
-				Sleep(400);
-				step.StepLeft();
-				step.Take();
+				step.StepRight();
 				game.ShowGame(field);
+				if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
+					!move.IsMove(field, cursor))
+				{
+					Sleep(400);
+					step.StepLeft();
+					step.Take();
+				}
+
 			}
 		}
 		else if (key == static_cast<int>(ConsoleKey::LeftArrow))
 		{
-			step.StepLeft();
-			game.ShowGame(field);
-			if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-				!move.IsMove(field, cursor))
+			if (cursor->GetRows() > cursor->GetMinRows())
 			{
-				Sleep(400);
-				step.StepRight();
-				step.Take();
+				step.StepLeft();
 				game.ShowGame(field);
+				if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
+					!move.IsMove(field, cursor))
+				{
+					Sleep(400);
+					step.StepRight();
+					step.Take();
+				}
 			}
 		}
 		else if (key == static_cast<int>(ConsoleKey::UpArrow))
 		{
-			step.StepUp();
-			game.ShowGame(field);
-			if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-				!move.IsMove(field, cursor))
+			if (cursor->GetColumns() > cursor->GetMincolumns())
 			{
-				Sleep(400);
-				step.StepDown();
-				step.Take();
+				step.StepUp();
 				game.ShowGame(field);
+				if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
+					!move.IsMove(field, cursor))
+				{
+					Sleep(400);
+					step.StepDown();
+					step.Take();
+				}
 			}
 		}
 		else if (key == static_cast<int>(ConsoleKey::DownArrow))
 		{
-			step.StepDown();
-			game.ShowGame(field);
-			if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-				!move.IsMove(field, cursor))
+			if (cursor->GetColumns() < cursor->GetMaxColumns())
 			{
-				Sleep(400);
-				step.StepUp();
-				step.Take();
+				step.StepDown();
 				game.ShowGame(field);
+				if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
+					!move.IsMove(field, cursor))
+				{
+					Sleep(400);
+					step.StepUp();
+					step.Take();
+				}
 			}
 		}
 		else if (key == static_cast<int>(ConsoleKey::Space))
