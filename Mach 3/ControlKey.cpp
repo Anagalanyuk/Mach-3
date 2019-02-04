@@ -14,8 +14,7 @@ ControlKey::ControlKey(PlayingField* field, Cursor* cursor)
 
 void ControlKey::StepLeft()
 {
-	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-		cursor->GetRows() > 0)
+	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()))
 	{
 		int color = field->GetColor(cursor->GetRows() - 1, cursor->GetColumns());
 		field->SetColor(cursor->GetRows() - 1, cursor->GetColumns(),
@@ -38,8 +37,7 @@ void ControlKey::StepLeft()
 void ControlKey::StepRight()
 {
 	Move move;
-	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-		cursor->GetRows() < 7)
+	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()))
 	{
 		int color = field->GetColor(cursor->GetRows() + 1, cursor->GetColumns());
 		field->SetColor(cursor->GetRows() + 1, cursor->GetColumns(),
@@ -61,8 +59,7 @@ void ControlKey::StepRight()
 
 void ControlKey::StepUp()
 {
-	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-		cursor->GetColumns() > 0)
+	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()))
 	{
 		int color = field->GetColor(cursor->GetRows(), cursor->GetColumns() - 1);
 		field->SetColor(cursor->GetRows(), cursor->GetColumns() - 1,
@@ -84,8 +81,7 @@ void ControlKey::StepUp()
 
 void ControlKey::StepDown()
 {
-	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()) &&
-		cursor->GetColumns() < 7)
+	if (field->IsTake(cursor->GetRows(), cursor->GetColumns()))
 	{
 		int color = field->GetColor(cursor->GetRows(), cursor->GetColumns() + 1);
 		field->SetColor(cursor->GetRows(), cursor->GetColumns() + 1,
