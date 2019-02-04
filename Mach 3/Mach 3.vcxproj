@@ -120,8 +120,10 @@
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Information.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ControlKey.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="PlayingField.cpp" />
     <ClCompile Include="Show.cpp" />
@@ -135,6 +137,8 @@
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ControlKey.h" />
+    <ClInclude Include="Information.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="PlayingField.h" />
     <ClInclude Include="Show.h" />

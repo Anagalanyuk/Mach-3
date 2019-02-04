@@ -2,6 +2,10 @@
 
 #include"Game.h"
 
+#include"Menu.h"
+
+#include<conio.h>
+
 int main()
 {
 	/*int score = 100;
@@ -11,6 +15,10 @@ int main()
 	Console::Write(ch);*/
 	Game mach3;
 	mach3.Play();
+
+	//char ch;
+	//ch = _getch();
+	//std::cout << ch << std::endl;
 
 	system("pause");
 }
