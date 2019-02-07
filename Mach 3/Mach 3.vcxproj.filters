@@ -54,6 +54,9 @@
     <ClCompile Include="ClearColor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AddCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Экзамен ооп с++\Console.h">
@@ -95,7 +98,10 @@
     <ClInclude Include="Information.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClearColor.h">
+    <ClInclude Include="ClearRepeatColor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

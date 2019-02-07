@@ -21,6 +21,7 @@ bool Move::IsMove(PlayingField* field, Cursor* cursor)
 	{
 		colorCount = 0;
 		offset = 1;
+		field->SetColor(cursor->GetRows(), cursor->GetColumns(), 0);
 		while (color == field->GetColor(cursor->GetRows() + offset, cursor->GetColumns()))
 		{
 			colorCount += 1;

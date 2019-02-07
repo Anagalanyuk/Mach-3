@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Экзамен ооп с++\Console.cpp" />
+    <ClCompile Include="AddCell.cpp" />
     <ClCompile Include="Border.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="ClearColor.cpp" />
@@ -133,9 +134,10 @@
     <ClInclude Include="..\..\Экзамен ооп с++\Console.h" />
     <ClInclude Include="..\..\Экзамен ооп с++\ConsoleColor.h" />
     <ClInclude Include="..\..\Экзамен ооп с++\ConsoleKey.h" />
+    <ClInclude Include="AddCell.h" />
     <ClInclude Include="Border.h" />
     <ClInclude Include="Cell.h" />
-    <ClInclude Include="ClearColor.h" />
+    <ClInclude Include="ClearRepeatColor.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ControlKey.h" />

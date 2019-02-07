@@ -19,8 +19,6 @@ public:
 	bool GetIsCursor(int rows, int columns);
 	void TakeCell(int rows, int columns);
 	bool IsTake(int rows, int columns);
-	////
-	void SetScore(int score);
 private:
 	int mScore = 0;
 	int level = 1;

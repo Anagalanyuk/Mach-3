@@ -22,7 +22,7 @@
 
 #include"Information.h"
 
-#include"ClearColor.h"
+#include"ClearRepeatColor.h"
 
 void Game::Play()
 {
@@ -70,15 +70,14 @@ void Game::Play()
 		Show game;
 		ControlKey step(field, cursor);
 		Move move;
-		ClearColor repeat(field, cursor);
+		ClearRepearColor repeat(field, cursor);
 		field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), true);
+		//repeat.ClearRepeat();
 
+		void(*print)(PlayingField* field);
 		while (key != static_cast<int>(ConsoleKey::Escape))
 		{
-			game.ShowGame(field);
-			//Sleep(1000);
 			repeat.ClearRepeat();
-			//Sleep(1000);
 			game.ShowGame(field);
 			key = _getch();
 			if (key == static_cast<int>(ConsoleKey::RightArrow))
@@ -148,10 +147,10 @@ void Game::Play()
 			else if (key == static_cast<int>(ConsoleKey::Enter))
 			{
 				field->ReStart();
-				field->SetScore(0);
 			}
 		}
 		delete field;
 		delete cursor;
 	}
+
 }

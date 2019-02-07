@@ -4,10 +4,10 @@
 
 #include"Cursor.h"
 
-class ClearColor
+class ClearRepearColor
 {
 public:
-	ClearColor(PlayingField* field, Cursor* cursor);
+	ClearRepearColor(PlayingField* field, Cursor* cursor);
 	void ClearRepeat();
 private:
 	PlayingField* mField;

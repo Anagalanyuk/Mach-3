@@ -1,30 +1,34 @@
-#include"ClearColor.h"
+#include<Windows.h>
+
+#include"ClearRepeatColor.h"
 
 #include"PlayingField.h"
 
 #include"Cursor.h"
-//////
-#include"Show.h";
 
-#include<Windows.h>
+#include"Show.h"
 
-ClearColor::ClearColor(PlayingField* field, Cursor* cursor)
+#include"AddCell.h"
+
+ClearRepearColor::ClearRepearColor(PlayingField* field, Cursor* cursor)
 {
 	mField = field;
 	mCursor = cursor;
 }
 
-void ClearColor::ClearRepeat()
+void ClearRepearColor::ClearRepeat()
 {
 	int offsetX = 0;
 	int offsetY = 0;
 	int countColor = 0;
 	bool isAddY = false;
 	Show game;
+	AddCell newColor(mField);
 	for (int i = 0; i <= mCursor->GetMaxRows(); ++i)
 	{
 		for (int j = 0; j <= mCursor->GetMaxColumns(); ++j)
 		{
+
 			countColor = 0;
 			offsetX = 1;
 			offsetY = 1;
@@ -33,7 +37,7 @@ void ClearColor::ClearRepeat()
 			{
 				countColor += 1;
 				offsetX += 1;
-				if (countColor >= 2)
+				if (countColor >= 2 && mField->GetColor(j + 1, i) != 0)
 				{
 					countColor = 0;
 					isAddY = true;
@@ -46,9 +50,11 @@ void ClearColor::ClearRepeat()
 						}
 						mField->SetColor(j + offsetX, i, 0);
 						offsetX += 1;
-						//game.ShowGame(mField);
-						//Sleep(1000);
+						game.ShowGame(mField);
+						Sleep(800);
 					}
+					newColor.DownCellField();
+					newColor.AddCellField();
 				}
 			}
 			countColor = 0;
@@ -56,7 +62,7 @@ void ClearColor::ClearRepeat()
 			{
 				countColor += 1;
 				offsetY += 1;
-				if (countColor >= 2)
+				if (countColor >= 2 && mField->GetColor(j, i + 1) != 0)
 				{
 					offsetY = isAddY ? 1 : 0;
 
@@ -68,9 +74,11 @@ void ClearColor::ClearRepeat()
 						}
 						mField->SetColor(j, i + offsetY, 0);
 						offsetY += 1;
-						//game.ShowGame(mField);
-						//Sleep(1000);
+						game.ShowGame(mField);
+						Sleep(800);
 					}
+					newColor.DownCellField();
+					newColor.AddCellField();
 				}
 			}
 			countColor = 0;

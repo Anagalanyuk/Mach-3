@@ -14,13 +14,14 @@ PlayingField::PlayingField()
 			field[i][j].SetColor(rand() % 6 + 1);
 		}
 	}
-	/*field[0][0].SetColor(1);
-	field[1][0].SetColor(1);
-	field[2][0].SetColor(1);
-	field[3][0].SetColor(1);
-	field[0][0].SetColor(1);
-	field[0][1].SetColor(1);
-	field[0][2].SetColor(1);*/
+
+	field[4][3].SetColor(1);
+	field[4][4].SetColor(1);
+	field[4][5].SetColor(1);
+	field[4][6].SetColor(1);
+	//field[0][0].SetColor(1);
+	//field[0][1].SetColor(1);
+	//field[0][2].SetColor(1);
 
 }
 
@@ -35,8 +36,6 @@ int PlayingField::GetLevel() { return level; }
 void PlayingField::AddScore(int addScore) { mScore += addScore; }
 
 void PlayingField::AddLevel() { level += 1; }
-///////////
-void PlayingField::SetScore(int score) { mScore = score;}
 
 void PlayingField::SetColor(int rows, int columns, int color)
 {
