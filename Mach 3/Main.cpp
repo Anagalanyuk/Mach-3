@@ -2,17 +2,19 @@
 
 #include"Game.h"
 
-#include"Menu.h"
+//#include"Menu.h"
 
-#include<conio.h>
+//#include<conio.h>
 
 int main()
 {
-	/*int score = 100;
+	/*int score = 11;
 	//std::string str = "hello";
 	char ch[10];
 	sprintf_s(ch, "%d", score);
-	Console::Write(ch);*/
+	score = 0;
+	std::cout << ch << std::endl;
+	//Console::Write(ch);*/
 	Game mach3;
 	mach3.Play();
 

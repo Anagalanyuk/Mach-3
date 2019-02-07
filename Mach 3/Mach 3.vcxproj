@@ -118,6 +118,7 @@
     <ClCompile Include="..\..\Экзамен ооп с++\Console.cpp" />
     <ClCompile Include="Border.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="ClearColor.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Information.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="..\..\Экзамен ооп с++\ConsoleKey.h" />
     <ClInclude Include="Border.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="ClearColor.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ControlKey.h" />

@@ -139,7 +139,7 @@ void Show::ShowGame(PlayingField* field)
 	sprintf_s(scorecharacter, "%d", field->GetScore());
 	sprintf_s(levelcharacter, "%d", field->GetLevel());
 	Console::SetCursorPosition(scoreX, scoreY);
-	Console::Write(scorecharacter, ConsoleColor::Cyan);
-	Console::SetCursorPosition(levelX, levelY);
 	Console::Write(levelcharacter, ConsoleColor::Cyan);
+	Console::SetCursorPosition(levelX, levelY);
+	Console::Write(scorecharacter, ConsoleColor::Cyan);
 }

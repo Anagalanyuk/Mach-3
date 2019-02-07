@@ -1,5 +1,3 @@
-#include<iostream>
-
 #include<conio.h>
 
 #include<Windows.h>
@@ -24,6 +22,8 @@
 
 #include"Information.h"
 
+#include"ClearColor.h"
+
 void Game::Play()
 {
 	int key = 0;
@@ -35,9 +35,13 @@ void Game::Play()
 		{
 			break;
 		}
+		else if (key == 235)
+		{
+			break;
+		}
 		menu.MenuShow();
 		key = _getch();
-		if (key == 105)
+		if (key == 105 || key == 232)
 		{
 			while (key != 114)
 			{
@@ -48,11 +52,16 @@ void Game::Play()
 				{
 					system("CLS");
 				}
+				else if (key == 170)
+				{
+					system("CLS");
+					break;
+				}
 			}
 		}
 	}
 	system("CLS");
-	if (key != 101)
+	if (key != 101 || key != 227)
 	{
 		Border border;
 		border.Show();
@@ -61,10 +70,15 @@ void Game::Play()
 		Show game;
 		ControlKey step(field, cursor);
 		Move move;
+		ClearColor repeat(field, cursor);
 		field->SetCorsor(cursor->GetRows(), cursor->GetColumns(), true);
 
 		while (key != static_cast<int>(ConsoleKey::Escape))
 		{
+			game.ShowGame(field);
+			//Sleep(1000);
+			repeat.ClearRepeat();
+			//Sleep(1000);
 			game.ShowGame(field);
 			key = _getch();
 			if (key == static_cast<int>(ConsoleKey::RightArrow))
@@ -80,7 +94,6 @@ void Game::Play()
 						step.StepLeft();
 						step.Take();
 					}
-
 				}
 			}
 			else if (key == static_cast<int>(ConsoleKey::LeftArrow))
@@ -135,8 +148,8 @@ void Game::Play()
 			else if (key == static_cast<int>(ConsoleKey::Enter))
 			{
 				field->ReStart();
+				field->SetScore(0);
 			}
-
 		}
 		delete field;
 		delete cursor;
